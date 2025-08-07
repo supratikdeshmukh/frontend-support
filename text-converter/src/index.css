@@ -1,0 +1,351 @@
+:root {
+  /* 🎨 Color Palette */
+  --bg-gradient: #ffffff;
+  --soft-blueish-tint: #f5f8fa;
+  --light-gray: #ccc;
+  --text: #111111;
+  --charcoal: #222;
+  --background: #f5f8fa;
+  --blue: #362d95;
+  --dark-blue: #141740;
+  --green: #2e7d32;
+  --accent: #2ecc71;
+  --accent-hover: #27ae60;
+  --selection-bg: var(--accent);
+  --selection-text: #ffffff;
+  --link: var(--accent);
+  --button-text: #ffffff;
+  --crimson-red: #c62828;
+
+  /* 🔤 Typography */
+  --font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-size: 1rem; /* Base font size */
+  --line-height: 1.5; /* Global line height */
+
+  /* 📏 Layout Settings */
+  --container-padding: 1rem;
+  --container-max-width: 1280px;
+  --border-radius: 8px; /* Standard border radius */
+}
+
+/* 🌒 Dark Mode Theme Overrides */
+body.dark {
+  --bg-gradient: linear-gradient(
+    to bottom right,
+    var(--dark-blue),
+    var(--blue)
+  );
+  --text: var(--soft-blueish-tint);
+  --background: #141740;
+}
+
+/* 🔒 Hide scrollbars for all scrollable elements */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🔄 Global Reset */
+:where(*) {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Prevent blue highlight on tap */
+}
+
+/* 🌐 Base HTML Styling */
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font-size);
+}
+
+/* 🧍 Body Styling */
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height);
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+
+  /* Hide scrollbars */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* 📏 Layout */
+.layout-grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | main | footer */
+  min-height: 100vh;
+}
+
+/* 📦 Responsive Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+/* 🅰️ Heading Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* 🔘 Buttons */
+button {
+  font-family: inherit;
+  font-size: var(--font-size);
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--button-text);
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 📝 Form Inputs & Labels */
+.formHeading {
+  font-size: 1.5rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: var(--font-size);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  color: var(--text);
+  background: var(--background);
+  resize: vertical;
+  border: 1px solid var(--light-gray);
+}
+
+/* 🔦 Text Selection Highlight */
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* 🧠 Accessibility Focus Indicator */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 🖼️ Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔗 Anchor Tags */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 🔝 Sticky Navbar */
+.header {
+  background: var(--background);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--dark-blue);
+  box-shadow: 0 1px 12px 0 #f5f8fa2e;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🌐 Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: inline-block;
+}
+
+/* 🌙 Theme Toggle Area */
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* 🎛️ Button Groups */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.button-group .btn {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button-group .btn:active {
+  transform: scale(0.98); /* Button press effect */
+}
+
+/* 🔔 Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--charcoal);
+  color: var(--button-text);
+  padding: 10px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.toast.success {
+  background-color: var(--green);
+}
+
+.toast.error {
+  background-color: var(--crimson-red);
+}
+
+.toast i {
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 📄 Footer Section */
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background: var(--background);
+  color: var(--text);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--dark-blue);
+  box-shadow: 0 -1px 12px 0 #f5f8fa2e;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 🔗 Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.social-icons a {
+  color: var(--text);
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: var(--accent);
+}
+
+/* 📱 Footer Responsive Layout */
+@media (max-width: 500px) {
+  .footer-inner {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* 📊 Stats Section */
+.stats h3 {
+  font-size: 1.5rem;
+}
+
+.stats ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.stats li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ♿ Accessible-Only Text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
