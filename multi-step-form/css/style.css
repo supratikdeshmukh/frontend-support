@@ -1,0 +1,120 @@
+/* ✅ General Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ✅ Grid Layout for Full Page */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Navbar - Content - Footer */
+  min-height: 100vh;
+}
+
+/* ✅ Navbar */
+.navbar {
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 10px 20px;
+  color: #ccc;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links li {
+  margin: 0 10px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #ccc;
+}
+.nav-links a:hover {
+  color: #fff;
+}
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+.menu-icon:hover {
+  color: #fff;
+}
+
+/* ✅ Responsive Menu */
+@media screen and (max-width: 600px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 60px; /* ✅ Below navbar */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 999;
+  }
+  .nav-links li {
+    margin: 15px 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* ✅ Form Styles */
+.form-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
+}
+.form-step {
+  display: none;
+  flex-direction: column;
+}
+.form-step.active {
+  display: flex;
+}
+input,
+select,
+textarea,
+button {
+  box-sizing: border-box;
+  margin: 5px 0;
+  padding: 10px;
+  width: 100%;
+}
+button {
+  background: #28a746;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #218839;
+}
+#formMessage {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* ✅ Footer */
+footer {
+  background: #333;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+}

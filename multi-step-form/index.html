@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Form | Responsive Form with AJAX & MySQL</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Multi Step Form | Responsive Form with AJAX & MySQL" />
+    <meta name="description"
+        content="A responsive multi-step form with a hamburger navbar that saves data to MySQL without page refresh using HTML, CSS, JavaScript, AJAX, PHP, and MySQL. Perfect for smooth user experience and data handling." />
+    <meta name="keywords"
+        content="multi-step form, responsive form, ajax form submission, mysql form, php form, hamburger navbar, javascript form, css responsive, single page form, form without refresh" />
+    <meta name="author" content="Supratik Deshmukh" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Multi Step Form | Responsive Form with AJAX & MySQL" />
+    <meta property="og:description"
+        content="Responsive multi-step form with hamburger navbar, saving form data in MySQL using AJAX and PHP without page refresh." />
+    <meta name="repository" content="https://github.com/supratikdeshmukh/frontend-support/tree/main/multi-step-form" />
+    <meta property="og:site_name" content="Multi-Step Form Project" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Multi Step Form | Responsive Form with AJAX & MySQL" />
+    <meta name="twitter:description"
+        content="Responsive multi-step form with hamburger navbar, saving form data in MySQL using AJAX and PHP without page refresh." />
+
+    <meta property="og:url" content="https://frontendsupport.in/projects/multi-step-form/" />
+    <!-- ✅ Font Awesome -->
+    <link rel="stylesheet" href="./css/style.css?v=1.0" />
+    <!-- ✅ Stylesheets -->
+    <link rel="stylesheet" href="./css/fontawesome-free-6.5.2-web/css/all.css" />
+</head>
+
+<body>
+
+    <!-- ✅ Navbar -->
+    <nav class="navbar">
+        <div class="logo">Logo</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- ✅ Multi-step Form -->
+    <div class="form-container">
+        <form id="multiStepForm">
+
+            <!-- ✅ Step 1 -->
+            <div class="form-step active">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required title="Please enter your full name" />
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="1" max="120"
+                    title="Please enter your age (1-120)" />
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required title="Please select your gender">
+                    <option value="">Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+                <button type="button" id="nextBtn">Next</button>
+            </div>
+
+            <!-- ✅ Step 2 -->
+            <div class="form-step">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required pattern="\d{10}" maxlength="10"
+                    title="Please enter exactly 10 digits" inputmode="numeric" autocomplete="tel" />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required title="Please enter a valid email address" />
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required title="Please enter your address"></textarea>
+
+                <button type="button" id="prevBtn">Back</button>
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+
+        <!-- ✅ Success/Error Message -->
+        <div id="formMessage"></div>
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer>
+        <p>&copy; 2025 Multi Step Form. All rights reserved.</p>
+    </footer>
+
+    <!-- ✅ Linking JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
