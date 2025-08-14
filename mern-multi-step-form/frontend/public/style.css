@@ -1,0 +1,152 @@
+/* ---------------- Root Variables ---------------- */
+:root {
+  --primary-color: #28a746; /* ✅ Main theme color */
+  --primary-hover: #218839; /* ✅ Hover color for buttons */
+  --navbar-bg: #333; /* ✅ Navbar background */
+  --navbar-text: #ccc; /* ✅ Navbar text color */
+}
+
+/* ---------------- Global Styles ---------------- */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Navbar | Main | Footer */
+  min-height: 100vh;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--navbar-bg);
+  padding: 10px 20px;
+  color: var(--navbar-text);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--navbar-text);
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon:hover {
+  color: #fff;
+}
+
+/* Mobile Navbar */
+@media screen and (max-width: 600px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 999;
+  }
+  .nav-links li {
+    margin: 15px 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* ---------------- Form Container ---------------- */
+.form-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+/* ---------------- Form Steps ---------------- */
+.form-step {
+  display: none;
+  flex-direction: column;
+  transition: opacity 0.3s ease-in-out; /* Smooth step transitions */
+}
+
+.form-step.active {
+  display: flex;
+}
+
+/* ---------------- Form Inputs ---------------- */
+input,
+select,
+textarea,
+button {
+  box-sizing: border-box;
+  margin: 5px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-color); /* ✅ Focus ring for accessibility */
+}
+
+/* ---------------- Buttons ---------------- */
+button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+/* ---------------- Form Message ---------------- */
+#formMessage {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
+  text-align: center;
+  padding: 15px;
+}
