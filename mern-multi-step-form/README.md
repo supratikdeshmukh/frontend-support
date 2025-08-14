@@ -23,4 +23,16 @@ A **modern multi-step form** built with the **MERN stack** (MongoDB, Express, Re
 
 ---
 
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## Author
+
+**Supratik Deshmukh**
+
+- GitHub: [https://github.com/supratikdeshmukh](https://github.com/supratikdeshmukh)
+- Website: [https://frontendsupport.in](https://frontendsupport.in)
 
