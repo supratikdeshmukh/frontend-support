@@ -20,6 +20,12 @@ export default function MultiStepForm() {
   // ✅ Ref to access the form DOM
   const formRef = useRef(null);
 
+  // ✅ Base API URL (auto switches between local and production)
+  const API_BASE =
+    import.meta.env.MODE === "development"
+      ? "http://localhost:5000"
+      : "https://your-backend.onrender.com"; // ✅ ✅ ✅Use your deployed backend URL here
+
   // ✅ Focus first input in the current step for accessibility
   useEffect(() => {
     const firstInput = formRef.current.querySelector(
@@ -86,7 +92,7 @@ export default function MultiStepForm() {
     }
 
     try {
-      const res = await fetch("/api/users", {
+      const res = await fetch(`${API_BASE}/api/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -117,7 +123,7 @@ export default function MultiStepForm() {
       {/* ---------------- Step 1 ---------------- */}
       <div
         className={"form-step" + (step === 0 ? " active" : "")}
-        aria-hidden={step !== 0} // accessibility
+        aria-hidden={step !== 0}
       >
         <label htmlFor="name">Name:</label>
         <input
@@ -166,7 +172,7 @@ export default function MultiStepForm() {
       {/* ---------------- Step 2 ---------------- */}
       <div
         className={"form-step" + (step === 1 ? " active" : "")}
-        aria-hidden={step !== 1} // accessibility
+        aria-hidden={step !== 1}
       >
         <label htmlFor="phone">Phone:</label>
         <input
