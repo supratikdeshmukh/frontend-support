@@ -15,7 +15,7 @@ const app = express();
 // ✅ Define allowed frontend origins
 const allowedOrigins = [
   process.env.CLIENT_URL || "http://localhost:5173", // Dev frontend
-  "https://frontendsupport.in", // Production frontend
+  "https://frontendsupport.in", // **Enter Your Production frontend**
 ];
 
 // ✅ Enable CORS with allowed origins + methods
