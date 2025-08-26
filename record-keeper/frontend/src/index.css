@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-r from-black via-gray-900 to-blue-900 text-white min-h-screen;
+  font-family: "Inter", sans-serif;
+}
+
+/* ✅ Global scrollbar + transitions */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ✅ Accessibility: disable animations if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ✅ Custom thin scrollbar (WebKit) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+}
