@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Apply background gradient, text color, min height, and font */
+body {
+  @apply bg-gradient-to-r from-black via-gray-900 to-blue-900 text-white min-h-screen;
+  font-family: "Inter", sans-serif;
+}
+
+/* ✅ Global scrollbar styling + smooth transitions */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1492ff transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ✅ Accessibility: disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ✅ Custom thin scrollbar styles for WebKit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1492ff;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9e9caf;
+}
