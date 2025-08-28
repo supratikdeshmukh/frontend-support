@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
     git clone https://github.com/supratikdeshmukh/frontend-support.git
     cd record-keeper-php
     ```
-2. Set up a **local PHP server** (e.g., XAMPP, WAMP, MAMP) and save `backend-php` into the server's `www` or `htdocs` folder.  
+2. Set up a **local PHP server** (e.g., XAMPP, WAMP, MAMP) and save `record-keeper-php/backend-php` section into the server's `www` or `htdocs` folder.  
 3. Import the provided MySQL database (`backend-php/database.sql`) into your MySQL server.  
 4. Configure the database connection in `config/db.php` (or similar file):  
     ```php
