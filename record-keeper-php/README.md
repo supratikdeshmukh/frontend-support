@@ -58,7 +58,7 @@ To run this project locally, follow these steps:
     ```bash
     npm install
     ```
-3. Configure `.env.production` with your backend URL:  
+3. Configure `.env.production` with your backend URL (**Use your only For deployment**):  
     ```
     VITE_API_URL=https://frontendsupport.in/projects/record-keeper-php/backend-php/api/records.php
     ```
@@ -82,7 +82,7 @@ To run this project locally, follow these steps:
     $password = "<your_db_password>";
     $dbname = "<your_db_name>";
     ```
-5. Configure your frontend `.env.production` to point to the live backend URL:  
+5. Configure your frontend `.env.production` to point to the live backend URL (**Use your only For deployment**):  
     ```
     VITE_API_URL=https://frontendsupport.in/projects/record-keeper-php/backend-php/api/records.php
     ```
